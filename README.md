@@ -141,6 +141,14 @@ const getHospital = (hospitalId) => req(`/hospitals/${hospitalId}`);
 - `GET /hospitals/{hospital_id}`
 - `POST/PUT/PATCH/DELETE /hospitals...` -> `405 Method Not Allowed` (읽기 전용)
 
+### Auto Call (트리거)
+- `POST /auto-call/trigger`
+  - 요청 Body 예시:
+    ```
+    { "hospital_ids": [1, 2, 3] }
+    ```
+  - 응답: `{ "triggered": true }` 또는 `{ "triggered": false }`
+
 ### 인증 헤더
 - `Authorization: Bearer <access_token>`
 
