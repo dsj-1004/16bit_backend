@@ -82,6 +82,10 @@ class HospitalList(BaseModel):
     total: int
 
 
+class AutoCallTriggerRequest(BaseModel):
+    hospital_ids: list[int]
+
+
 class UserFamilyPublic(BaseModel):
     id: int
     user_id: int
