@@ -35,5 +35,7 @@ export const api = {
   listHospitals: (params = {}) => req(`/hospitals${Object.keys(params).length ? `?${new URLSearchParams(params)}` : ""}`),
   // Hospital: 병원 단건 조회
   getHospital: (hospitalId) => req(`/hospitals/${hospitalId}`),
+  // AutoCall: 자동 연결 트리거
+  triggerAutoCall: (token, hospital_ids = []) => req("/auto-call/trigger", { method: "POST", token, body: { hospital_ids } }),
 };
 export { API_BASE, req };
